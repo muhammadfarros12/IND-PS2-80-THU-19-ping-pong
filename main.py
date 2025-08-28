@@ -30,9 +30,7 @@ class GameSprite(sprite.Sprite):
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
-# main player class
 class Player(GameSprite):
-    # method for controlling the sprite with keyboard arrows
     def move_p1(self):
         keys = key.get_pressed()
         if keys[K_w] and self.rect.y > 5:
@@ -66,6 +64,9 @@ while game:
     p1.reset()
     p2.reset()
     ball.reset()
+
+    p1.move_p1()
+    p2.move_p2()
 
     display.update()
     clock.tick(60)
